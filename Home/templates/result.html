@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <style>
+            .header{
+                margin-left:30%;
+                font-size: 150%;
+            }
+            .platform{
+                margin-left: 40%;
+                font-size: 20px;
+            }
+            .score{
+                margin-left:35%;
+                font-size: 18px;
+            }
+            table{
+                margin-left: 10%;
+                width: 80%;
+                border: 1px solid; 
+            }
+            th, td{
+                border: 1px solid; 
+            }
+        </style>
+        <title> Result </title>
+    </head>
+    <body>
+        <div class="header"> Sentiment Analytics for: {{Search}} </div>
+        <br/><br/>
+        <div class="Platform">All Platforms</div>
+        <br/>
+        <div class="score">Overall Sentiment: {{all_score}}</div>
+        <table class="table">
+            <tr>
+                <th scope="col">Keyword</th>
+            {% for word, value in All.items %}
+                <td class="hotwords" scope="row">{{word}}</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <th scope="col">Sentiment</th>
+            {% for word, value in All.items %}
+                <td class="Values" scope="row">{{value}}</td>
+            {% endfor %}
+            </tr>
+        </table>
+
+        <br/><br/>
+        <div class="Platform">Twitter</div>
+        <br/>
+        <div class="score">Overall Sentiment: {{twitter_score}}</div>
+        <table class="table">
+            <tr>
+                <th scope="col">Keyword</th>
+            {% for word, value in Twitter.items %}
+                <td class="hotwords" scope="row">{{word}}</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <th scope="col">Sentiment</th>
+            {% for word, value in Twitter.items %}
+                <td class="Values" scope="row">{{value}}</td>
+            {% endfor %}
+            </tr>
+        </table>
+
+        <br/><br/>
+        <div class="Platform">Youtube</div>
+        <br/>
+        <div class="score">Overall Sentiment: {{youtube_score}}</div>
+        <table class="table">
+            <tr>
+                <th scope="col">Keyword</th>
+            {% for word, value in Youtube.items %}
+                <td class="hotwords" scope="row">{{word}}</td>
+            {% endfor %}
+            </tr>
+            <tr>
+                <th scope="col">Sentiment</th>
+            {% for word, value in Youtube.items %}
+                <td class="Values" scope="row">{{value}}</td>
+            {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>

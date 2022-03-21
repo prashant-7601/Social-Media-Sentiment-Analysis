@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> Home </title>
+        <style>
+            .input-group{
+                margin-left: 20%;
+                margin-top: 20%;
+            }
+            #name{
+                width: 60%;
+                height: 5%;
+            }
+            #search{
+                width:8%;
+                height:5%;
+                background: DodgerBlue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input-group">
+            <form method="POST" action="/search">
+                {% csrf_token %}
+                <input type="text" name="name" id="name" class="form-control rounded" placeholder="Enter something...."/>
+                <Button id="search" class="btn btn-outline-primary" action="/search">Search</button>
+            </form>
+        </div>
+    </body>
+</html>
